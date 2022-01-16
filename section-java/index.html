@@ -15,7 +15,10 @@
 
     <div class="container">
         <script>
-            document.write(10+3*2/10)
+            var today = new Date();
+            var todayHtml = today.getFullYear() + "/" + (today.getMonth() +1) + "/" + today.getDate();
+
+            document.write(`<p class="date">` + todayHtml + "</p>");
         </script>
     </div>
 
