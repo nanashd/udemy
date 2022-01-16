@@ -19,15 +19,30 @@
         </div>
     </div>
     <script>
+        //ゼロを追加する
+        var addZero = function (value) {
+            if (value < 10) {
+                value = '0' + value;
+            }
+            return value;
+        }
         var now = new Date();
+
         var seconds = now.getSeconds(); //秒数を習得
-
         //0秒から9秒までの間だけ
-        if(seconds < 10){
-        seconds = '0' + seconds;
-        }            
+        seconds = addZero(seconds);
 
-        document.getElementById('timer').innerHTML = seconds;
+        var minutes = now.getMinutes(); //分を取得
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+
+        var hours = now.getHours(); //時間を取得
+        if (hours < 10) {
+            hours = '0' + hours;
+        }
+
+        document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
     </script>
 
 </body>
