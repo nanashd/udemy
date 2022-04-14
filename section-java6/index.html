@@ -26,22 +26,21 @@
             }
             return value;
         }
-        var now = new Date();
 
-        var seconds = now.getSeconds(); //秒数を習得
-        seconds = addZero(seconds); //0秒から9秒までの間だけ
+        document.getElementById(`start_stop`).addEventListener(`click`,
+            function () {
+                var now = new Date();
+                var seconds = now.getSeconds(); //秒数を習得
+                seconds = addZero(seconds); //0秒から9秒までの間だけ
 
-        var minutes = now.getMinutes(); //分を取得
-        if (minutes < 10) {
-            minutes = '0' + minutes;
-        }
+                var minutes = now.getMinutes(); //分を取得
+                minutes = addZero(minutes);
 
-        var hours = now.getHours(); //時間を取得
-        if (hours < 10) {
-            hours = '0' + hours;
-        }
+                var hours = now.getHours(); //時間を取得
+                hours = addZero(hours);
 
-        document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+                document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+            });
     </script>
 
 </body>
